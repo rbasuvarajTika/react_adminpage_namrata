@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import { Button } from '@mui/material';
 
 const columns = [
   { id: 'name', label: 'User Id', minWidth: 170 },
@@ -86,6 +87,10 @@ export default function UserTable(props) {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
+  function handleClick(id) {
+  // Define the logic for handling the button click here
+  console.log(`Button clicked for row with id ${id}`);
+}
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
@@ -115,13 +120,15 @@ export default function UserTable(props) {
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                       <TableCell key={column.id} align={column.align}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
                         </TableCell>
                       );
-                    })}
+                    }
+                    )}
+                    <Button variant="contained" onClick={() => handleClick(row.id)}>Edit</Button>
                   </TableRow>
                 );
               })}
