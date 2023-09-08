@@ -1,9 +1,12 @@
 import * as React from 'react';
+import { useState } from 'react';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
+import UserTable from './UserTable';
+import PagingTabs from './PagingTabs';
 
 
 const top100Films = [
@@ -13,8 +16,17 @@ const top100Films = [
 ]
 
 export default function AdminPage() {
+  const [searchUser, setSearchUser] = useState('');
+
+  const handleChange = (e) => {
+    setSearchUser(e.target.value)
+  }
+
+  console.log(searchUser)
+
   return (
-    <>    
+    <>  
+    <PagingTabs/>  
     <Box
     sx={{
       width: '100%',
@@ -48,7 +60,8 @@ export default function AdminPage() {
               label="Serach User"
               type="text"
               id="outlined-size-small"
-              autoComplete="current-password"
+              value={searchUser}
+              onChange={handleChange}
             />
             <Button variant="contained" style={{backgroundColor :'#ff5722', color:"#000"}}>Create New User</Button>
             <Button variant="contained" style={{backgroundColor :'#ffc400', color:"#000"}}>Report Fields</Button>
@@ -56,7 +69,7 @@ export default function AdminPage() {
 
     </Box>
     </Stack>
-
+    <UserTable searchUser={searchUser}/>
     </>
 
   );
