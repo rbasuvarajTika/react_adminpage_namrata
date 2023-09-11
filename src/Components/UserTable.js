@@ -8,6 +8,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import { Button } from '@mui/material';
+import { Link} from 'react-router-dom';
+
 
 const columns = [
   { id: 'name', label: 'User Id', minWidth: 170 },
@@ -129,7 +131,9 @@ export default function UserTable(props) {
                       );
                     }
                     )}
+                    <Link className=" link" to="/EditUser"> 
                     <Button variant="contained" onClick={() => handleClick(row.id)}>Edit</Button>
+                    </Link>
                   </TableRow>
                 );
               })}
