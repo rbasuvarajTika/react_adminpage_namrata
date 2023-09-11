@@ -1,19 +1,19 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from './Components/LoginPage';
-// import PagingTabs from './Components/PagingTabs';
-// import UserTable from './Components/UserTable';
 import AdminPage from './Components/AdminPage';
+import CreateNewUser from './Components/CreateNewUser';
+
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <LoginPage/>,
     },
-    // {
-    //   path: "/forgotpassword",
-    //   element: <ForgotPassword/>,
-    // },
+    {
+      path: "/createnewuser",
+      element: <CreateNewUser/>,
+    },
     {
       path: "/adminpage",
       element: <AdminPage/>,

@@ -7,6 +7,8 @@ import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import UserTable from './UserTable';
 import PagingTabs from './PagingTabs';
+import { Link} from 'react-router-dom'
+
 
 
 const top100Films = [
@@ -21,9 +23,6 @@ export default function AdminPage() {
   const handleChange = (e) => {
     setSearchUser(e.target.value)
   }
-
-  console.log(searchUser)
-
   return (
     <>  
     <PagingTabs/>  
@@ -63,7 +62,9 @@ export default function AdminPage() {
               value={searchUser}
               onChange={handleChange}
             />
-            <Button variant="contained" style={{backgroundColor :'#ff5722', color:"#000"}}>Create New User</Button>
+             <Link className=" link" to="/CreateNewUser"> 
+                 <Button variant="contained" style={{backgroundColor :'#ff5722', color:"#000"}}>Create New User</Button>
+            </Link>
             <Button variant="contained" style={{backgroundColor :'#ffc400', color:"#000"}}>Report Fields</Button>
       </Stack>
 
