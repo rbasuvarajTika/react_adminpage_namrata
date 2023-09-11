@@ -38,7 +38,7 @@ export default function EditUser() {
       </ToggleButtonGroup>
         <Box sx={{ }}>
         <Button variant="contained" sx={{backgroundColor:"#9e9e9e", color:"black"}}>Edit User - Admin Page</Button>
-        <Stack spacing={4} direction="row">
+        <Stack spacing={4} direction="row" sx={{marginTop:'20px'}}>
         <div>
              <p className='fieldLabel'>*User Id</p>
              <TextField
@@ -88,7 +88,7 @@ export default function EditUser() {
             />
         </div>
         </Stack>
-        <Stack spacing={4} direction="row">
+        <Stack spacing={4} direction="row" >
         <div>
              <p className='fieldLabel'>Address</p>
              <TextField
@@ -118,8 +118,8 @@ export default function EditUser() {
         </Stack>
         </Box>
         <Divider light />
-        <Stack spacing={4} direction="row">
-            <p>current Status</p>
+        <Stack spacing={4} direction="row" sx={{marginTop:'20px'}}>
+            <p>Current Status</p>
             <Button
               type="button"
               variant="outlined"
@@ -135,6 +135,25 @@ export default function EditUser() {
               sx={{ mt: 3, mb: 2 , backgroundColor:'red',color:'#fff'}}
             >
               User Locked
+            </Button>
+        </Stack>
+        <Stack spacing={4} direction="row" sx={{marginTop:'20px'}}>
+            <p>Change Status To:</p>
+            <Button
+              type="button"
+              variant="outlined"
+              className='border'
+              sx={{ mt: 3, mb: 2 , backgroundColor:'#bf360c ',color:'black'}}
+            >
+              Deactivated
+            </Button>
+            <Button
+              type="button"
+              variant="outlined"
+              className='border'
+              sx={{ mt: 3, mb: 2 , backgroundColor:'#00b0ff',color:'#000'}}
+            >
+              Unlock User
             </Button>
         </Stack>
             <Button
