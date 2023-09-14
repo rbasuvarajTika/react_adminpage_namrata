@@ -86,7 +86,7 @@ export default function LoginPage() {
                 />
               </Grid>
               <Grid item xs>
-                <Link href="#" variant="body2">
+                <Link className='link' to='/ForgotPassword'>
                   Forgot UserId/Password
                 </Link>
               </Grid>

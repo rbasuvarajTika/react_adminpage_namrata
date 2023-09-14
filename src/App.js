@@ -4,6 +4,7 @@ import LoginPage from './Components/LoginPage';
 import AdminPage from './Components/AdminPage';
 import CreateNewUser from './Components/CreateNewUser';
 import EditUser from './Components/EditUser';
+import ForgotPassword from './Components/ForgotPassword';
 
 function App() {
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ function App() {
     {
       path: "/edituser",
       element: <EditUser/>,
+    },
+    {
+      path: "/forgotpassword",
+      element: <ForgotPassword/>,
     },
     
   

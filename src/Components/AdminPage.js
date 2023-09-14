@@ -9,8 +9,6 @@ import UserTable from './UserTable';
 import PagingTabs from './PagingTabs';
 import { Link} from 'react-router-dom'
 
-
-
 const top100Films = [
   { label: 'All Users', year: 1994 },
   { label: 'Active Users', year: 1972 },
